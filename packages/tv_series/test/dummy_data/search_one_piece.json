@@ -1,0 +1,28 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/qD211Hb5XwFxrszzBBe5EUYJerh.jpg",
+      "genre_ids": [
+        10759,
+        10765
+      ],
+      "id": 111110,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "ONE PIECE",
+      "overview": "With his straw hat and ragtag crew, young pirate Monkey D. Luffy goes on an epic voyage for treasure.",
+      "popularity": 130.597,
+      "poster_path": "/rVX05xRKS5JhEYQFObCi4lAnZT4.jpg",
+      "first_air_date": "2023-08-31",
+      "name": "ONE PIECE",
+      "vote_average": 8.174,
+      "vote_count": 972
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 6
+}
