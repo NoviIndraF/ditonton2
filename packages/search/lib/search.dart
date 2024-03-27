@@ -1,7 +1,6 @@
 library search;
 
 export 'movie/domain/usecases/search_movies.dart';
-export 'movie/presentation/provider/movie_search_notifier.dart';
 export 'movie/presentation/bloc/search_bloc.dart';
 export 'movie/presentation/pages/search_page.dart';
 

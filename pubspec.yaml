@@ -28,6 +28,8 @@ dependencies:
     path: packages/tv_series
 
   dartz: ^0.10.1
+  firebase_core: ^2.27.1
+  firebase_crashlytics: ^3.4.19
 
 dev_dependencies:
   flutter_test:

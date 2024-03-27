@@ -4,7 +4,7 @@ class Genre extends Equatable {
   final int id;
   final String name;
 
-  Genre({
+  const Genre({
     required this.id,
     required this.name,
   });

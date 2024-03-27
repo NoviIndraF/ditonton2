@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:movie/domain/entities/movie.dart';
 
-import '../../helpers/test_helper.mocks.dart';
+import '../../../../../movie/test/helpers/test_helper.mocks.dart';
 import 'package:search/search.dart';
 
 void main() {

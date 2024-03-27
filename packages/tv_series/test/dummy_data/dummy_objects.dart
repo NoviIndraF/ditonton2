@@ -26,7 +26,7 @@ final testTvSeries = TvSeries(
 
 final testTvSeriesList = [testTvSeries];
 
-final testTvSeriesDetail = TvSeriesDetail(
+const testTvSeriesDetail = TvSeriesDetail(
   adult: false,
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
   genres: [Genre(id: 1, name: 'Action')],

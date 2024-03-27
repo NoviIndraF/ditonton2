@@ -22,6 +22,7 @@ dependencies:
     path: ../core
   search:
     path: ../search
+  firebase_crashlytics: ^3.4.19
 
 dev_dependencies:
   flutter_test:

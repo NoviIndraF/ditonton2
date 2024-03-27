@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:movie/domain/usecases/get_movie_detail.dart';
+import 'package:movie/movie.dart';
 import 'package:movie/presentation/bloc/detail_movie/detail_movie_bloc.dart';
 
 import '../../dummy_data/dummy_objects.dart';
@@ -23,6 +24,24 @@ void main() {
   test('the initial state should be empty', () {
     expect(detailMovieBloc.state, DetailMovieInitial());
   });
+
+  blocTest<DetailMovieBloc, DetailMovieState>(
+    'should emit Loading state and then HasData state when data successfully fetched',
+    build: () {
+      when(mockGetMovieDetail.execute(testId))
+          .thenAnswer((_) async => const Right(testMovieDetail));
+      return detailMovieBloc;
+    },
+    act: (bloc) => bloc.add(GetMovieDetailEvent(testId)),
+    expect: () => [
+      DetailMovieLoading(),
+      GetDetailMovieState(testMovieDetail),
+    ],
+    verify: (bloc) {
+      verify(mockGetMovieDetail.execute(testId));
+      return GetMovieDetailEvent(testId).props;
+    },
+  );
 
   blocTest<DetailMovieBloc, DetailMovieState>(
     'should emit Loading state and then Error state when data failed to fetch',

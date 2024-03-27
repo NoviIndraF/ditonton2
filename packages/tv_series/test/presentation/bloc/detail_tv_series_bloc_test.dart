@@ -25,6 +25,24 @@ void main() {
   });
 
   blocTest<DetailTvSeriesBloc, DetailTvSeriesState>(
+    'should emit Loading state and then HasData state when data successfully fetched',
+    build: () {
+      when(mockGetTvSeriesDetail.execute(testId))
+          .thenAnswer((_) async => const Right(testTvSeriesDetail));
+      return detailTvSeriesBloc;
+    },
+    act: (bloc) => bloc.add(GetTvSeriesDetailEvent(testId)),
+    expect: () => [
+      DetailTvSeriesLoading(),
+      GetDetailTvSeriesState(testTvSeriesDetail),
+    ],
+    verify: (bloc) {
+      verify(mockGetTvSeriesDetail.execute(testId));
+      return GetTvSeriesDetailEvent(testId).props;
+    },
+  );
+
+  blocTest<DetailTvSeriesBloc, DetailTvSeriesState>(
     'should emit Loading state and then Error state when data failed to fetch',
     build: () {
       when(mockGetTvSeriesDetail.execute(testId))
